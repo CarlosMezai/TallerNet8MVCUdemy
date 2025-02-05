@@ -9,5 +9,7 @@ namespace BlogCore.Data
             : base(options)
         {
         }
+
+        //REGISTRAR LOS MODELOS (TABLAS)
     }
 }
