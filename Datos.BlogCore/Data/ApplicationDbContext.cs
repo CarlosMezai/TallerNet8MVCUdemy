@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Models.BlogCore;
 
 namespace BlogCore.Data
 {
@@ -11,5 +12,7 @@ namespace BlogCore.Data
         }
 
         //REGISTRAR LOS MODELOS (TABLAS)
+
+        public DbSet<Categoria> Categoria { get; set; }
     }
 }
