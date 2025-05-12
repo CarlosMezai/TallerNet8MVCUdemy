@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Areas\Admin\Controllers\CategoriasController.cs" />
     <Compile Include="Areas\Cliente\Controllers\HomeController.cs" />
   </ItemGroup>
 
@@ -53,11 +54,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
+    <ProjectReference Include="..\Datos.BlogCore\Datos.BlogCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Datos.BlogCore\Datos.BlogCore.csproj" />
+    <None Include="Areas\Admin\Views\Categorias\Index.cshtml" />
   </ItemGroup>
 
 </Project>

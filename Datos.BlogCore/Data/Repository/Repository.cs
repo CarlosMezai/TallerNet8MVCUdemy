@@ -18,7 +18,7 @@ namespace Datos.BlogCore.Data.Repository
         public Repository(DbContext context)
         {
             Context = context;
-            this.dbSet = context.Set<T>();  
+            this.dbSet = context.Set<T>();
         }
 
 
@@ -29,40 +29,67 @@ namespace Datos.BlogCore.Data.Repository
 
         public T Get(int id)
         {
-           return dbSet.Find(id);
+            return dbSet.Find(id);
         }
 
         public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, string? includeProperties = null)
         {
+            //SE crea una consulta IQueryable a partir del DBSEt del contexto
             IQueryable<T> query = dbSet;
             if (filter != null)
             {
                 query = query.Where(filter);
             }
 
+            //se incluiyen propiedades de navegacion si se proporcionan
             if (includeProperties != null)
             {
-                foreach (var includeProperty in includeProperties.Split(new char[]{ ','}, StringSplitOptions.RemoveEmptyEntries))
-                    {
+                //se divide la cadena de propiedades por coma y se itera sobre ellas
+                foreach (var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
 
-                    query = 
+                    query = query.Include(includeProperty);
                 }
             }
+
+            //se aplica el oprdenamiento sis e proporciona
+            if (orderBy != null)
+            {
+                return orderBy(query).ToList();
+            }
+
+            return query.ToList();
         }
 
         public T GetFirstOrDefault(Expression<Func<T, bool>>? filter = null, string? includeProperties = null)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = dbSet;
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+            if (includeProperties != null)
+            {
+                //se divide la cadena de propiedades por coma y se itera sobre ellas
+                foreach (var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+
+                    query = query.Include(includeProperty);
+                }
+            }
+
+            return query.FirstOrDefault();
         }
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            T entityToRemove = dbSet.Find(id);
         }
 
         public void Remove(T entity)
         {
-            throw new NotImplementedException();
+            dbSet.Remove(entity);
         }
     }
 }
