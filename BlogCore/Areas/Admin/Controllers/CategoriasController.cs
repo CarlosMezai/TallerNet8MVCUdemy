@@ -21,8 +21,6 @@ namespace BlogCore.Areas.Admin.Controllers
 
 
 
-
-
         #region Llamadas a la API
         [HttpGet]
 
