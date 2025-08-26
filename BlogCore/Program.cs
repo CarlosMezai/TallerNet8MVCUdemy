@@ -16,6 +16,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+
 
 //Agregar contenedor de trabajo al contenedor IoC de inyección de dependencia
 
