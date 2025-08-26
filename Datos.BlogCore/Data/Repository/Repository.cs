@@ -52,7 +52,7 @@ namespace Datos.BlogCore.Data.Repository
                 }
             }
 
-            //se aplica el oprdenamiento sis e proporciona
+            //se aplica el ordenamiento si se proporciona
             if (orderBy != null)
             {
                 return orderBy(query).ToList();

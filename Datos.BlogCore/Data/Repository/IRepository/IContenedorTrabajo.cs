@@ -9,7 +9,7 @@ namespace Datos.BlogCore.Data.Repository.IRepository
     public interface IContenedorTrabajo : IDisposable
     {
 
-        //Se debn agregar los diferentes respositorios
+        //Se deben agregar los diferentes respositorios
 
         ICategoriaRepository Categoria { get; }
 

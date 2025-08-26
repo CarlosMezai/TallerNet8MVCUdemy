@@ -58,7 +58,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Areas\Admin\Views\Categorias\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Categorias\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Content Include="Areas\Admin\Views\Categorias\Create.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Categorias\Edit.cshtml" />
   </ItemGroup>
 
 </Project>
