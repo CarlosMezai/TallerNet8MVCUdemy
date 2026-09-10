@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BlogCore.Areas.Cliente.Controllers
 {
+    [Area("Cliente")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

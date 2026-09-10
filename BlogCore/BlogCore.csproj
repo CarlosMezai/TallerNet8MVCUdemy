@@ -8,9 +8,47 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Admin\**" />
+    <Compile Remove="Areas\Cliente\**" />
+    <Content Remove="Areas\Admin\**" />
+    <Content Remove="Areas\Cliente\**" />
+    <EmbeddedResource Remove="Areas\Admin\**" />
+    <EmbeddedResource Remove="Areas\Cliente\**" />
+    <None Remove="Areas\Admin\**" />
+    <None Remove="Areas\Cliente\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Areas\Admin\Controllers\CategoriasController.cs" />
+    <Compile Include="Areas\Cliente\Controllers\HomeController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Cliente\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Cliente\Views\Home\Privacy.cshtml" />
+    <Content Include="Areas\Cliente\Views\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Areas\Cliente\Views\_ViewStart.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
