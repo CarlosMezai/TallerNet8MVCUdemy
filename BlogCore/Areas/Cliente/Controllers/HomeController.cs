@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using BlogCore.Models;
+using Models.BlogCore;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogCore.Areas.Cliente.Controllers
