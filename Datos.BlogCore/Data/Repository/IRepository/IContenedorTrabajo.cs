@@ -12,6 +12,9 @@ namespace Datos.BlogCore.Data.Repository.IRepository
         //Se deben agregar los diferentes respositorios
 
         ICategoriaRepository Categoria { get; }
+        IArticuloRepository Articulo { get; }
+        ISliderRepository Slider { get; }
+
 
 
         void Save();

@@ -34,7 +34,7 @@ namespace Datos.BlogCore.Data.Repository
 
         public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, string? includeProperties = null)
         {
-            //SE crea una consulta IQueryable a partir del DBSEt del contexto
+            //Se crea una consulta IQueryable a partir del DBSEt del contexto
             IQueryable<T> query = dbSet;
             if (filter != null)
             {
@@ -72,7 +72,8 @@ namespace Datos.BlogCore.Data.Repository
             if (includeProperties != null)
             {
                 //se divide la cadena de propiedades por coma y se itera sobre ellas
-                foreach (var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                foreach (var includeProperty in includeProperties
+                    .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
 
                     query = query.Include(includeProperty);

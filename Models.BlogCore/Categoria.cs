@@ -19,5 +19,6 @@ namespace Models.BlogCore
         [Display(Name ="Orden de Visualización")]
         [Range(1, 100, ErrorMessage ="El valor debe estar entre 1 y 100")]
         public int? Orden { get; set; }
+
     }
 }
